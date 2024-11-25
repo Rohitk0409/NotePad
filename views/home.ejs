@@ -1,0 +1,50 @@
+<%- layout('/layouts/boiyerlarcode.ejs') %>
+<style>
+  .main {
+    padding-top: 6rem;
+  }
+  .about {
+    min-width: 62%;
+    padding: 2rem;
+    margin: auto;
+  }
+  .main div p {
+    font-size: large;
+    letter-spacing: 0.1rem;
+  }
+  h2 span {
+    color: orange;
+  }
+  h2 {
+    letter-spacing: 0.2rem;
+  }
+  .btn {
+    background-color: orange !important;
+    color: black !important;
+  }
+  .btn:hover {
+    background-color: black;
+    color: white;
+  }
+</style>
+<div class="row main">
+  <div class="col about">
+    <h2>Welcome to <span>Cloud Notes</span></h2>
+    <p>
+      your digital space for capturing ideas, organizing tasks, and staying
+      productive. Whether you're jotting down quick notes, brainstorming
+      projects, or managing to-do lists, our intuitive platform is designed to
+      help you stay on top of it all.
+    </p>
+    <a href="/login">
+      <button class="btn"><b>Let`s Start</b></button>
+    </a>
+  </div>
+  <div class="col image">
+    <img
+      src="https://img.freepik.com/premium-vector/happy-cute-little-kid-boy-hold-notebook-pencil_97632-2392.jpg?w=360"
+      alt=""
+      width="380px"
+    />
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<%- layout('/layouts/boiyerlarcode.ejs') %>
+<style>
+  .user {
+    min-height: 100vh;
+    height: 100%;
+    padding: 2rem;
+    padding-top: 6rem;
+  }
+  .btn {
+    background-color: orange;
+    color: black;
+  }
+  .btn:hover {
+    background-color: black;
+    color: white;
+  }
+  .list {
+    box-shadow: 0 0 7px black;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  h4 {
+    color: orange;
+    letter-spacing: 0.1rem;
+  }
+  p {
+    color: rgb(12, 11, 11);
+    letter-spacing: 0.1rem;
+  }
+  hr {
+    color: black;
+  }
+  .lists a {
+    margin-bottom: 1rem;
+  }
+  hr {
+    color: orange;
+  }
+  span {
+    color: orange;
+    letter-spacing: 1px;
+  }
+  .hr {
+    color: black;
+  }
+  .notes {
+    color: black;
+    letter-spacing: 2px;
+  }
+  .msg {
+    color: green;
+  }
+</style>
+<div class="user">
+  <% if(hour>=12 && hour<=16) {%>
+  <h3>Good Afternoon <span><%= data.name %></span></h3>
+  <% } else if(hour>16 && hour<=24) { %>
+  <h3>Good Evening <span><%= data.name %></span></h3>
+  <% } else{ %>
+  <h3>Good Morning <span><%= data.name %></span></h3>
+  <% } %>
+
+  <a href="/create/<%=data._id%>"> <button class="btn">Create Notes</button></a>
+  <div class="lists mt-4">
+    <h4 class="notes">All Your Notes</h4>
+    <hr class="hr" />
+    <%if(message && message.length) {%>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%=message %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %> <%if(message2 && message2.length) {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%=message2 %>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <% } %> <%for(d of data.notes){ %>
+    <a href="/notepage/<%= data._id %>/<%=d._id%>">
+      <div class="list">
+        <h4><%=d.title %></h4>
+        <hr />
+        <p><%=(d.content).substring(0,200) %></p>
+        <hr />
+        <span
+          >Last Update: &nbsp;<%= (d.date).toISOString().split('T')[0]%></span
+        >
+      </div>
+    </a>
+    <%} %>
+  </div>
+</div>

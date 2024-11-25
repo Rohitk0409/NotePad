@@ -1,0 +1,125 @@
+<%- layout('/layouts/boiyerlarcode.ejs') %>
+<style>
+  .main {
+    padding-top: 6rem;
+    margin-bottom: 3rem;
+  }
+  p {
+    letter-spacing: 1px;
+    font-size: large;
+  }
+  h3,
+  h1 {
+    color: black;
+    letter-spacing: 2px;
+  }
+  button {
+    background-color: orange !important;
+    color: black !important;
+    letter-spacing: 2px;
+  }
+  span {
+    color: orange;
+  }
+  input,
+  textarea {
+    border: 1px solid black !important;
+  }
+</style>
+<div class="row main">
+  <div class="col">
+    <img
+      src="https://img.freepik.com/premium-vector/flat-design-woman-using-laptop-cyber-security-illustration_917213-257294.jpg?ga=GA1.1.678774544.1687320226&semt=ais_hybrid"
+      alt=""
+      width="380"
+    />
+  </div>
+  <div class="col help">
+    <h3>Help from <span>Cloud Notes</span></h3>
+    <hr />
+    <p>
+      Welcome to Cloud Notes, your go-to platform for creating and managing
+      notes effortlessly. Once you log in, you can easily start writing by
+      creating a new note, and your content will be saved instantly and synced
+      across all your devices for easy access. Organize your notes using tags or
+      folders to keep everything structured and easy to find. If you need to
+      locate a specific note, simply use the search function to filter by
+      keywords, tags, or titles. Your notes are securely stored in the cloud
+      with encryption to protect your data. You can access your notes anytime
+      from any device, making it easy to stay productive wherever you are. If
+      you need to make changes, editing and deleting notes is straightforward.
+      For further assistance, you can explore the FAQs or contact our support
+      team through the help section. Enjoy a seamless and secure note-taking
+      experience with Cloud Notes.
+    </p>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      data-bs-whatever="@fat"
+    >
+      Help
+    </button>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Help from <span>Cloud Notes</span>
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="/help" method="post">
+              <div class="mb-4">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="Email-id"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="help" class="form-label">Your Querry</label>
+                <textarea
+                  name="help"
+                  id=""
+                  class="form-control"
+                  placeholder="Enter your querry"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-4">
+                <button class="btn">Send</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

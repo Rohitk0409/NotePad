@@ -1,0 +1,69 @@
+<%- layout('/layouts/boiyerlarcode.ejs') %>
+<style>
+  .main {
+    padding-top: 6rem;
+    min-height: 100vh;
+  }
+  form {
+    width: 70%;
+    margin: auto;
+    background-color: rgba(237, 206, 148, 0.553);
+    padding: 2rem;
+    border-radius: 9px;
+  }
+  button {
+    background-color: orange !important;
+    color: black !important;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(20, 18, 15);
+  }
+  .message {
+    color: red;
+  }
+</style>
+<div class="row main">
+  <div class="col">
+    <img
+      src="https://img.freepik.com/premium-vector/happy-cute-little-kid-boy-hold-notebook-pencil_97632-2392.jpg?w=360"
+      alt=""
+      width="380px"
+    />
+  </div>
+  <div class="col form">
+    <form action="/login" method="post">
+      <h3>Login</h3>
+      <% if(message){%>
+      <p class="message"><%= message %></p>
+      <% } %> <% if(login){%>
+      <p class="message"><%= login %></p>
+      <% } %>
+      <hr />
+      <div class="mb-2">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          placeholder="E-mail"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="password" class="form-label">Your Password ?</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="mb-2">
+        <button class="btn">Login</button>
+      </div>
+      <a href="/singup">Create new account ?</a>
+    </form>
+  </div>
+</div>

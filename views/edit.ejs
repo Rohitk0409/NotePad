@@ -1,0 +1,50 @@
+<%- layout('/layouts/boiyerlarcode.ejs') %>
+<style>
+  .notes {
+    padding: 2rem;
+    padding-top: 6rem;
+    min-height: 100vh;
+  }
+  input,
+  textarea {
+    border: 1px solid black !important;
+  }
+  button {
+    background-color: orange !important;
+    color: black !important;
+  }
+  form {
+    min-width: 100px;
+  }
+</style>
+<div class="notes">
+  <form method="POST" action="/edit/<%=id%>/<%=data._id %>?_method=PUT">
+    <div class="mb-4">
+      <label for="title" class="form-label"><b>Title</b></label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Write your Notes title"
+        name="title"
+        value="<%=data.title %>"
+        required
+      />
+    </div>
+    <div class="mb-4">
+      <label for="notes" class="form-label"><b>Write Your Notes</b></label>
+      <textarea
+        name="notes"
+        id=""
+        rows="11"
+        class="form-control"
+        placeholder="Write your notes"
+        required
+      >
+<%=data.content %></textarea
+      >
+    </div>
+    <div class="mb-4">
+      <button class="btn"><b>Save</b></button>
+    </div>
+  </form>
+</div>
